@@ -12,3 +12,4 @@ class Like < ApplicationRecord
       throw(:abort)
     end
   end
+end 

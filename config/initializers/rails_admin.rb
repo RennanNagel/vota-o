@@ -8,6 +8,13 @@ RailsAdmin.config do |config|
     redirect_to main_app.root_path unless current_user.admin?
   end
 
+  config.model 'Issue' do
+
+    [:issue_statement, :cause].each do |field_name|
+      list { field(field_name) }
+    end
+  end
+
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
