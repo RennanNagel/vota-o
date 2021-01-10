@@ -30,8 +30,12 @@
             </div>
           <% else %>
             <div class="has-text-centered section">
-              <i id="liked">liked</i>
-              <i id="disliked"></i>
+              <%= link_to new_like_path(like:{kind: true, campaign_id: @campaign.id}) do %>
+              <i class="fa fa-smile" id="liked" ></i>
+              <%end%>
+              <%= link_to new_like_path(like:{kind: false, campaign_id: @campaign.id}) do %>
+              <i class="fa fa-frown" id="disliked"></i>
+              <%end%>
             </div>
           <% end %>
         </div>

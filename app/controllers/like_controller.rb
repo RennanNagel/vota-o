@@ -1,18 +1,22 @@
 class LikeController < ApplicationController
     before_action :set_campaign, only: [:show]
     before_action :set_like, only: [:update]
-  
+
     def show
       @like = Like.where(campaign: @campaign, user: current_user)
       render json: @like
     end
-  
+    
+    def new
+      create
+    end
+
     def create
       @like = Like.new(like_params.merge(user: current_user))
       if @like.save
-        render json: @like
+       redirect_to root_path, notice: "Like dado com sucesso!"
       else
-        render json: @like.errors, status: :unprocessable_entity
+        redirect_to root_path, alert: "Erro ao dar like!"
       end
     end
   
