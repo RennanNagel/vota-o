@@ -1,3 +1,4 @@
+
 $(document).on('ready turbolinks:load', function(){
     
     var voidLiked = `<i class="far fa-grin-beam fa-2x" style="color:#D5D3D3"></i>`;
